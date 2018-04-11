@@ -22,3 +22,7 @@
 
 .byebug_history
 .idea/*
+/config/application.yml
+/config/secrets.yml
+*.env
+.DS_Store

@@ -1,0 +1,98 @@
+<!--
+==================================================
+    Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>Service</h2>
+          <ol class="breadcrumb">
+            <li>
+              <a href="index.html">
+                <i class="glyphicon glyphicon-home"></i>
+                Home
+              </a>
+            </li>
+            <li class="active">Service</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--
+==================================================
+    Service Page Section  Start
+================================================== -->
+<section id="service-page" class="pages service-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2 align="center" class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Love to manage you photos</h2>
+          <p align="center" class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms">Start managing your pics today. Choose a plan for you needs</p>
+          <div class="row service-parts">
+            <div class="col-md-6">
+              <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                <i class="glyphicon glyphicon-tasks"></i>
+                <h3>Premium Plan: $10</h3>
+                <ul>
+                  <li><p>Unlimited Image Uploads</p></li>
+                  <li><p>Responsive design</p> </li>
+                  <li><p>Access Anywhere</p></li>
+                  <% if  current_user %>
+                    <li><%= link_to 'Upgrade',edit_user_registration_path ,class:'btn btn-md btn-primary'%></li>
+                  <% else %>
+                    <li><%= link_to 'Select',  user_session_path, class: 'btn btn-md btn-primary' %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="800ms">
+                <i class="glyphicon glyphicon-tasks"></i>
+                <h3>Amaze Plan: $20</h3>
+                <ul>
+                  <li><p>Unlimited Image Uploads</p></li>
+                  <li><p>Responsive design</p> </li>
+                  <li><p>Access Anywhere</p></li>
+                  <% if  current_user %>
+                   <li> <%= link_to 'Upgrade',edit_user_registration_path, class: 'btn btn-md btn-primary'%> </li>
+                  <% else %>
+                    <li><%= link_to 'Select',  user_session_path, class: 'btn btn-md btn-primary' %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="800ms">
+                <i class="glyphicon glyphicon-tasks"></i>
+                <h3>Upcoming Plan: $10</h3>
+                <ul>
+                  <li><p>Unlimited Image Uploads</p></li>
+                  <li><p>Responsive design</p> </li>
+                  <li><p>Access Anywhere</p></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="800ms">
+                <i class="glyphicon glyphicon-tasks"></i>
+                <h3>Upcoming Plan: $10</h3>
+                <ul>
+                  <li><p>Unlimited Image Uploads</p></li>
+                  <li><p>Responsive design</p> </li>
+                  <li><p>Access Anywhere</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

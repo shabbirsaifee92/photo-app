@@ -12,6 +12,10 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'jquery-rails'
+gem 'ionicons-rails'
+gem 'stripe'
+gem 'wow-rails'
+gem 'paperclip', '~> 6.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -40,6 +44,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails', :groups => [:development, :test]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
