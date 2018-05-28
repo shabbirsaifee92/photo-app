@@ -1,0 +1,86 @@
+
+<!--
+==================================================
+    Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>My Albums</h2>
+          <ol class="breadcrumb">
+            <li>
+              <a href="index.html">
+                <i class="glyphicon glyphicon-home"></i>
+                Home
+              </a>
+            </li>
+            <li class="active">My Albums</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="navbar navbar-default">
+  <div class="row col-xs-12">
+    <div class="btn btn-sm navbar-btn glyphicon glyphicon-folder-open"></div>
+    <div class="btn btn-sm navbar-btn glyphicon glyphicon-arrow-right"></div>
+    <div class="btn btn-sm navbar-btn glyphicon glyphicon-refresh"></div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a data-toggle="modal" data-target="#new_album"> <span class="glyphicon glyphicon-plus"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
+    </ul>
+  </div>
+
+</nav>
+<%= form_for :new_album do |f|%>
+  <div class="modal fade" id="new_album">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title">
+            Enter a title for the new <album></album>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.text_field :title, class: 'form-control', value: 'untitled',autofocus: true, maxlength: 30 %>
+            <!--<input type="text" maxlength=50 value="untitled" autofocus="true" class="form-control">-->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="row">
+            <a class="btn col-xs-3" data-dismiss="modal">cancel</a>
+            <%= f.submit('create',class: 'btn col-xs-8 text-center') %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<!--
+==================================================
+    Albums section
+================================================== -->
+<section id="service-page" class="pages service-page">
+  <div class="row col-lg-12">
+    <% @albums.each do |album|%>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 bottom-padding-15">
+        <%= link_to (album_path(album)) do %>
+          <div class="hovereffect">
+            <%= image_tag 'bg1.jpg', class: 'img-responsive' %>
+            <div class="overlay">
+              <h2><%= album.title %></h2>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>

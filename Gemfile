@@ -16,6 +16,8 @@ gem 'ionicons-rails'
 gem 'stripe'
 gem 'wow-rails'
 gem 'paperclip', '~> 6.0'
+gem 'pry-rails'
+gem 'carrierwave'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server

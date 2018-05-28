@@ -126,7 +126,7 @@ a:hover {
 .global-page-header {
   background-attachment: fixed;
   background-size: cover;
-  padding: 120px 0 25px 0;
+  padding: 80px 0 25px 0;
   position: relative;
   background: #02bdd5;
   color: #fff;
@@ -1433,3 +1433,12 @@ cols    1     2      3      4      5
 px      68    160    252    344    436    */
 
 /*# sourceMappingURL=maps/style.css.map */
+
+.no-left-padding{
+    padding-left: 0;
+}
+
+input[type="range"] {
+    display: block;
+    width: 150px;
+}

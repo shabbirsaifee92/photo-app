@@ -14,8 +14,8 @@ class RegistrationsController < Devise::RegistrationsController
         begin
           @payment.process_payment
           @payment.save
-        rescue => e
-          flash[:error]= e.message
+        rescue StandardError => e
+          flash[:error] = e.message
           resource.destroy
           render :new and return
         end

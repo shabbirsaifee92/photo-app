@@ -1,0 +1,5 @@
+<% if @game.name == 'death race' %>
+  <%= render 'race.html.erb' %>
+<% elsif @game.name == 'brick breaker'%>
+  <%= render 'brick_breaker.html.erb' %>
+<% end %>

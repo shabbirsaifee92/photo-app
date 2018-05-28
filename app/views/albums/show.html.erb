@@ -1,0 +1,175 @@
+<style>
+  canvas{
+    border: 1px solid black;
+    height:100%;
+    width: 100%;
+    margin: 10px;
+    /*background-color: red !important;*/
+    /*opacity: 0.1;*/
+  }
+</style>
+<!--
+==================================================
+    Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2><%= @album.title%></h2>
+          <ol class="breadcrumb">
+            <li>
+              <a href="index.html">
+                <i class="glyphicon glyphicon-home"></i>
+                Home
+              </a>
+            </li>
+            <li ><%= link_to 'My Albums', albums_path %></li>
+            <li class="active"><%= @album.title %></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render 'images/new'%>
+
+
+
+
+
+<!--
+==================================================
+    Image section
+================================================== -->
+<section id="service-page" class="pages service-page">
+  <div class="row col-lg-12">
+    <% @album.images.each do |image|%>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 bottom-padding-15">
+        <a >
+          <%= image_tag image.picture, class: 'img-responsive' %>
+          <!--<div class="hovereffect">-->
+            <!---->
+            <!--<div class="overlay">-->
+              <!--<h2><%= image.name %></h2>-->
+            <!--</div>-->
+          <!--</div>-->
+      </a>
+    </div>
+    <% end %>
+  </div>
+</section>
+
+<div class="modal fade" id="image-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      Image modal
+      <div class="btn btn-md pull-right glyphicon glyphicon-remove" data-dismiss="modal"></div>
+    </div>
+    <div class="modal-body row">
+      <div class="col-md-12">
+        <div class="col-md-4">
+          <!--<a class="btn btn-primary" id ='filter'>Apply filter</a>-->
+          <div>
+            <label>Filters: </label> <br />
+            <div>
+              <label>Grayscale: </label>
+              <input type="checkbox" class="grayscale"><br />
+              <input type="radio" id="average"
+                     name="contact" value="email">
+              <label for="average">Average</label>
+
+              <input type="radio" id="luminosity"
+                     name="contact" value="phone">
+              <label for="luminosity">Luminous</label>
+
+              <input type="radio" id="lightness"
+                     name="contact" value="mail">
+              <label for="lightness">Lightness</label>
+            </div>
+
+            <label>Invert: </label>
+            <input type="checkbox" class="invert"><br />
+
+            <label>Black & White: </label>
+            <input type="checkbox" class="blackwhite"><br />
+
+            <label>Brownie: </label>
+            <input type="checkbox" class="brownie"><br />
+
+            <label>Vintage: </label>
+            <input type="checkbox" class="vintage"><br />
+
+            <label>Technicolor: </label>
+            <input type="checkbox" class="technicolor"><br />
+
+            <label>Polaroid: </label>
+            <input type="checkbox" class="polaroid"><br />
+
+            <label>Kodachrome: </label>
+            <input type="checkbox" class="kodachrome"><br />
+
+          </div>
+          <div>
+            <a class="btn no-left-padding" id="add-text">Add Text</a>
+          </div>
+          <div>
+            <label>Brighteness:</label>
+            <input type="checkbox" id="cbx-brightness"><br />
+            <input id="brightness-value" type="range" min="-1" max="1" value="0" step="0.01"/>
+          </div>
+
+          <div>
+            <label>Saturation:</label>
+            <input type="checkbox" id="cbx-saturation"><br />
+            <input id="saturation-value" type="range" min="-1" max="1" value="0" step="0.01"/>
+          </div>
+
+          <div>
+            <label>Hue:</label>
+            <input type="checkbox" id="cbx-hue"><br />
+            <input id="hue-value" type="range" min="-2" max="2" value="0" step="0.01"/>
+          </div>
+
+          <div>
+            <label>Noise:</label>
+            <input type="checkbox" id="cbx-noise"><br />
+            <input id="noise-value" type="range" min="0" max="1000" value="100"/>
+          </div>
+
+          <div>
+            <label>Pixelate:</label>
+            <input type="checkbox" id="cbx-pixelate"><br />
+            <input id="pixelate-value" type="range" min="2" max="20" value="4" step="0.01"/>
+          </div>
+
+          <div>
+            <label>Blur:</label>
+            <input type="checkbox" id="cbx-blur"><br />
+            <input id="blur-value" type="range" min="0" max="1" value="0" step="0.01"/>
+          </div>
+
+          <div>
+            <label>Gamma:</label>
+            <input type="checkbox" id="cbx-gamma"><br />
+            Red: <input id="gamma-red" type="range" min="0.2" max="2.2" value="1" step="0.01"/>
+            Green: <input id="gamma-green" type="range" min="0.2" max="2.2" value="1" step="0.01"/>
+            Blue: <input id="gamma-blue" type="range" min="0.2" max="2.2" value="1" step="0.01"/>
+          </div>
+
+          <div>
+            <label>Distance:
+            <input type="range" id="distance-value" value="0" min="0" max="1" step="0.01">
+            </label>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <canvas id="c" class='img-responsive shadow' >
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

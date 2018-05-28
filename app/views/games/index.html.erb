@@ -1,0 +1,54 @@
+<!--
+==================================================
+    Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>Games</h2>
+          <ol class="breadcrumb">
+            <li>
+              <a href="index.html">
+                <i class="glyphicon glyphicon-home"></i>
+                Home
+              </a>
+            </li>
+            <li class="active">Games</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--
+==================================================
+    Service Page Section  Start
+================================================== -->
+<section id="service-page" class="pages service-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2 align="center" class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">Love to manage you photos</h2>
+          <p align="center" class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms">Start managing your pics today. Choose a plan for you needs</p>
+          <div class="row service-parts">
+            <%@games.each do |g| %>
+              <div class="col-md-6">
+                <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                  <i class="glyphicon glyphicon-tasks"></i>
+                  <h3><%= g.name %></h3>
+                  <%= link_to 'Play', game_path(g), class: 'btn btn-success'%>
+                </div>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

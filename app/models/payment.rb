@@ -19,6 +19,4 @@ class Payment < ApplicationRecord
                           currency: 'usd'
 
   end
-
-
 end
